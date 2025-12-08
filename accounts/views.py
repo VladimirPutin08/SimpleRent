@@ -26,10 +26,11 @@ class RegisterView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-from rest_framework import generics
-from .serializers import RegisterSerializer
-from rest_framework.permissions import AllowAny
 
-class RegisterView(generics.CreateAPIView):
+from rest_framework import generics
+from rest_framework.permissions import AllowAny
+from .serializers import RegisterSerializer
+
+class RegisterUserView(generics.CreateAPIView):
     permission_classes = (AllowAny,)
     serializer_class = RegisterSerializer
