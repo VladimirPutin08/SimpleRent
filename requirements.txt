@@ -6,3 +6,4 @@ python-dotenv
 django-cors-headers
 dj-database-url
 whitenoise
+pip install djangorestframework-simplejwt
