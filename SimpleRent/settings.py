@@ -68,13 +68,10 @@ STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-INSTALLED_APPS += ["accounts"]
 AUTH_USER_MODEL = "accounts.User"
 
 CORS_ALLOW_ALL_ORIGINS = True
-
 CSRF_TRUSTED_ORIGINS = [
     "https://simplerent-8.onrender.com",
 ]
-
 CORS_ALLOW_CREDENTIALS = True
