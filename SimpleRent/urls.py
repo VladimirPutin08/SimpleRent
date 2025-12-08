@@ -34,3 +34,15 @@ urlpatterns = [
     path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     # existing register/login endpoints if you have them
 ]
+from django.contrib import admin
+from django.urls import path, include
+from django.http import JsonResponse
+
+def index(request):
+    return JsonResponse({"status":"ok", "message":"SimpleRent API is online 🚀"})
+
+urlpatterns = [
+    path("", index),
+    path("admin/", admin.site.urls),
+    path("api/accounts/", include("accounts.urls")),   # <--- this line must point to accounts.urls
+]
