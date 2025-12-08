@@ -3,7 +3,10 @@ from django.db import models
 
 class User(AbstractUser):
     ROLE_CHOICES = (
-        ("owner", "Owner"),
-        ("tenant", "Tenant"),
+        ('owner', 'Owner'),
+        ('tenant', 'Tenant')
     )
-    role = models.CharField(max_length=10, choices=ROLE_CHOICES, default="owner")
+    role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='tenant')
+
+    def __str__(self):
+        return self.username
