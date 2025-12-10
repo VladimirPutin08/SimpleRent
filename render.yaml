@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: simplerent
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python manage.py migrate && gunicorn SimpleRent.wsgi:application"
